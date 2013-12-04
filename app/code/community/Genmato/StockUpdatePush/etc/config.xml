@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Genmato_StockUpdatePush>
+            <version>0.1.0</version>
+        </Genmato_StockUpdatePush>
+    </modules>
+
+    <global>
+        <helpers>
+            <genmato_stockupdatepush>
+                <class>Genmato_StockUpdatePush_Helper</class>
+            </genmato_stockupdatepush>
+        </helpers>
+
+        <models>
+            <genmato_stockupdatepush>
+                <class>Genmato_StockUpdatePush_Model</class>
+            </genmato_stockupdatepush>
+        </models>
+
+        <events>
+            <cataloginventory_stock_item_save_commit_after>
+                <observers>
+                    <genmato_stockupdatepush_qty_update>
+                        <type>model</type>
+                        <class>Genmato_StockUpdatePush_Model_Observer</class>
+                        <method>qtyUpdatePush</method>
+                    </genmato_stockupdatepush_qty_update>
+                </observers>
+            </cataloginventory_stock_item_save_commit_after>
+        </events>
+
+    </global>
+
+    <default>
+        <genmato_stockupdatepush>
+            <configuration>
+                <remote_type>GET</remote_type>
+            </configuration>
+        </genmato_stockupdatepush>
+    </default>
+</config>

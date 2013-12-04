@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <genmato_core>
+            <groups>
+                <genmato_stockupdatepush>
+                    <label>Stock Update Push</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>genmato_core/system_config_form_fieldset_extensions</frontend_model>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </genmato_stockupdatepush>
+            </groups>
+        </genmato_core>
+        <genmato_stockupdatepush>
+            <label>Stock Update Push</label>
+            <tab>genmato</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>199998</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <configuration>
+                    <label>Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <enabled translate="label comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enabled>
+                        <remote_url translate="label comment">
+                            <label>Remote URL</label>
+                            <comment>Remote URL for update push notifications</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </remote_url>
+                        <remote_type translate="label comment">
+                            <label>Action type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>genmato_stockupdatepush/system_config_source_remote_type</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </remote_type>
+                    </fields>
+                </configuration>
+            </groups>
+        </genmato_stockupdatepush>
+    </sections>
+</config>

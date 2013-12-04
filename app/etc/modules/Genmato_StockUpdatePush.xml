@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Genmato_StockUpdatePush>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Genmato_Core/>
+                <Mage_CatalogInventory/>
+            </depends>
+        </Genmato_StockUpdatePush>
+    </modules>
+</config>
