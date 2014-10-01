@@ -66,7 +66,10 @@ class Genmato_StockUpdatePush_Model_Observer
     {
         if ($this->isEnabled()) {
             $item = $observer->getEvent()->getItem();
-            $qty = $item->getQtyOrdered() - max($item->getQtyShipped(), $item->getQtyInvoiced()) - $item->getQtyCanceled();
+            $qty = $item->getQtyOrdered() - max(
+                    $item->getQtyShipped(),
+                    $item->getQtyInvoiced()
+                ) - $item->getQtyCanceled();
             $params = array();
             $params['product_id'] = $item->getProductId();
             $params['sku'] = $item->getSku();
